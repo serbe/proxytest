@@ -30,7 +30,7 @@ func main() {
         for _, header := range headers {
             str := r.Header.Get(header)
             if str != "" {
-                fmt.Fprintf(w, "<p>X-Forwarded-For: %s</p>", str)
+                fmt.Fprintf(w, "<p>%s: %s</p>", header, str)
             }
         }
     })
